@@ -12,6 +12,7 @@ export const MyComposition: React.FC<{ message: string }> = ({ message }) => {
         gap: '0.5em',
         textAlign: 'center',
         fontSize: '7em',
+        backgroundColor: 'rebeccapurple',
       }}
     >
       <div>The current frame is {frame}.</div>
