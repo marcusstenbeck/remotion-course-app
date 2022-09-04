@@ -1,3 +1,8 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+
+  // so babel knows to look in this dir
+  // https://www.google.com/search?q=cannot+find+module+next%2Fbabel&oq=cannot+find+module+next&aqs=chrome.0.0i512j69i57j0i20i263i512j0i512l7.4460j0j7&sourceid=chrome&ie=UTF-8
+  // https://github.com/sanity-io/sanity/issues/3320
+  "eslint.workingDirectories": ["./web"]
 }
