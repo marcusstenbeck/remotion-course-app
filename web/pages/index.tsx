@@ -1,7 +1,7 @@
-import { Player } from '@remotion/player';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
+import { IframePlayer } from '../components/IframePlayer';
 import { MyComposition } from '../remotion/MyComposition';
 import styles from '../styles/Home.module.css';
 
@@ -25,7 +25,7 @@ const Home: NextPage = () => {
         </p>
         {/* I've added a dashed red border so we can see the edges of the video. */}
         <div className="border-2 border-dashed border-red-500">
-          <Player
+          <IframePlayer
             style={{
               // The remotion player will resize to fit inside the player.
               // We set a fixed width and the height will be automatically adjusted for you.
