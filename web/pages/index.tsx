@@ -1,11 +1,14 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
+import { useState } from 'react';
 import { IframePlayer } from '../components/IframePlayer';
 import { MyComposition } from '../remotion/MyComposition';
 import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
+  const [message, setMessage] = useState('Hello!');
+
   return (
     <div className={styles.container}>
       <Head>
@@ -17,15 +20,21 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <h1 className={styles.title}>
           <span className="text-red-500">Welcome</span> to{' '}
-          <a href="https://nextjs.org">Next.js</a>
+          <a href="https://remotion.dev">Remotion</a>
         </h1>
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.tsx</code>
-        </p>
+
+        <div className="my-4">
+          <input
+            className="px-2 py-1"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          />
+        </div>
+
         {/* I've added a dashed red border so we can see the edges of the video. */}
         <div className="border-2 border-dashed border-red-500">
           <IframePlayer
+            inputProps={{ message }}
             style={{
               // The remotion player will resize to fit inside the player.
               // We set a fixed width and the height will be automatically adjusted for you.
